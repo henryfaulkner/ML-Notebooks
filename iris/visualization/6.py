@@ -4,5 +4,5 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('../iris.csv')
 data = data.drop(columns=['Id'])
 
-data.hist()
+data.hist(edgecolor='black')
 plt.show()
