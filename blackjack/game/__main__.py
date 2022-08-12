@@ -11,7 +11,7 @@ import random
 class Params():
     def __init__(self):
         # "input", "random_policy", "fixed_policy"
-        self.action_type = "input"
+        self.action_type = "random_policy"
 
         # Only used for "random_policy" or "fixed_policy" input
         self.num_games = 20000
@@ -21,7 +21,7 @@ class Params():
             os.getcwd(), 'Sarsa_Policy_2.policy')
 
         # Which state mapping algorithm to use (1 or 2)
-        self.state_mapping = 2
+        self.state_mapping = 1
         return
 
 
@@ -236,8 +236,13 @@ class BlackJack_game():
         state = sp
         if player_won_bool:
             reward = self.win_reward
+            print("reward")
+            print(reward)
         else:
             reward = self.lose_reward
+            print("reward")
+            print(reward)
+
         self.sarsp.append([state, np.random.randint(2),
                           reward, self.terminal_state])
 
